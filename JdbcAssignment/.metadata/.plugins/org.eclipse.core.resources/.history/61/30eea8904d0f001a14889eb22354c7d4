@@ -1,0 +1,39 @@
+package com.testyantra.assesment;
+
+import java.util.List;
+import java.util.Scanner;
+
+import com.testyantra.assesment.dao.ContactDAO;
+import com.testyantra.assesment.dto.ContactInfo;
+import com.testyantra.assesment.util.ContactManger;
+
+public class App {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		System.out.println("press 1 to show all the contacts");
+		System.out.println("press 2 to search for contact using name");
+		System.out.println("press 3 to operate on contact");
+		Scanner sc=new Scanner(System.in);
+		int ch=sc.nextInt();
+		
+		switch(ch) {
+		
+		case 1:
+			ContactDAO impl= ContactManger.getContactDAo();
+			List<ContactInfo> info=impl.getAllContacts();
+			for (ContactInfo contactInfo : info) {
+				System.out.println("Contct Name is:"+contactInfo.getName());
+			}
+			break;
+		case 2:
+			break;
+		case 3:
+			break;
+		default:System.out.println("invalid chioice");
+		
+		}//end of switch case
+	}//end of main main method
+
+}//end of class
